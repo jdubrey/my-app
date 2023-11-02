@@ -2,9 +2,12 @@
   font-family: sans-serif;
   text-align: center;
 }
+.Results {
+  font-family: sans-serif;
+  text-align: center;
+}
 ul {
   list-style-type: none;
-  display: inline-block;
 }
 .Description {
   text-transform: capitalize;
