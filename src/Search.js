@@ -43,7 +43,7 @@ export default function Search() {
     );
   } else {
     return (
-      <div className="Results">
+      <div className="Search">
         <form onSubmit={handleSubmit}>
           <input
             type="Search"
