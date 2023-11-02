@@ -1,2 +1,10 @@
 .Search {
+  font-family: sans-serif;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+}
+.Description {
+  text-transform: capitalize;
 }
