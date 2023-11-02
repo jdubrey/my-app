@@ -4,6 +4,7 @@
 }
 ul {
   list-style-type: none;
+  display: inline-block;
 }
 .Description {
   text-transform: capitalize;
