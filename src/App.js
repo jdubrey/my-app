@@ -4,8 +4,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="Container">
-          <h1>Weather App</h1>
+        <h1>Weather App</h1>
+        <div className="Weather">
+          <p>Miami</p>
         </div>
       </header>
     </div>

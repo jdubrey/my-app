@@ -1,7 +1,9 @@
 .App {
   font-family: sans-serif;
-}
-.Container {
-  border-radius: 30px solid black;
   text-align: center;
+}
+.Weather {
+  border-radius: 16px solid black;
+  text-align: center;
+  padding: 40px;
 }
