@@ -1,5 +1,6 @@
 .Weather {
-  border-radius: 5px solid black;
+  border: 5px solid black;
+  border-radius: 10px;
   text-align: center;
   font-family: sans-serif;
 }
