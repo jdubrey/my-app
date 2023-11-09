@@ -5,9 +5,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Weather App</h1>
-        <div className="Weather">
-          <p>Miami</p>
-        </div>
+
+        <p>Miami</p>
       </header>
     </div>
   );

@@ -30,7 +30,7 @@ export default function Search() {
 
   if (city === null) {
     return (
-      <div className="Search">
+      <div className="Weather">
         <form onSubmit={handleSubmit}>
           <input
             type="Search"
@@ -43,7 +43,7 @@ export default function Search() {
     );
   } else {
     return (
-      <div className="Search">
+      <div className="Weather">
         <form onSubmit={handleSubmit}>
           <input
             type="Search"

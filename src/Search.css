@@ -1,8 +1,8 @@
-.Search {
-  font-family: sans-serif;
+.Weather {
+  border-radius: 5px solid black;
   text-align: center;
+  font-family: sans-serif;
 }
-
 ul {
   list-style-type: none;
 }
