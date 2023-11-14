@@ -3,7 +3,7 @@ import "./convert.css";
 
 export default function ConvertTemp() {
   let [unit, setUnit] = useState("fahrenheit");
-  const [temperature, setTemperature] = useState(null);
+  const [temperature] = useState(null);
   function showCelsius(event) {
     event.preventDefault();
     setUnit("celsius");
