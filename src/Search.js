@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import ".src/search.css";
 import axios from "axios";
 import ConvertTemp from "./ConvertTemp";
+import "./Search.css";
 
 export default function Search() {
   const [ready, setReady] = useState(false);
