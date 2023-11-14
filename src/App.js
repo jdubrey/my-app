@@ -1,15 +1,11 @@
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Weather App</h1>
-
-        <p>Miami</p>
-      </header>
+      <footer>
+        This App is open source, and was <a href="/">coded</a> by Jessica Dubrey
+      </footer>
     </div>
   );
 }
-
-export default App;
