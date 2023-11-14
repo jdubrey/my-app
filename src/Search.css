@@ -1,16 +1,24 @@
 .Search {
-  margin: 60px auto;
-  max-width: 800px;
-}
-.Weather {
-  border: 5px solid black;
-  border-radius: 10px;
-  text-align: center;
   font-family: sans-serif;
+  border: #005689 3px solid;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 60px auto;
+  max-width: 660px;
+}
+Form {
+  padding: 0px 0px 10px 0px;
+}
+.Forecast {
+  padding: 0px 0px 80px 0px;
 }
 ul {
   list-style-type: none;
 }
 .Description {
   text-transform: capitalize;
+}
+.Daily {
+  font-size: 60px;
+  font-weight: 600;
 }
