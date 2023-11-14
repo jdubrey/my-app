@@ -1,72 +1,88 @@
 import React, { useState } from "react";
+import "./styles.css";
 import axios from "axios";
-import "./Search.css";
+import ConvertTemp from "./ConvertTemp";
 
 export default function Search() {
-  let [location, setLocation] = useState(null);
-  let [forecast, setForecast] = useState(null);
+  const [ready, setReady] = useState(false);
+  const [temperature, setTemperature] = useState(null);
   let [description, setDescription] = useState(null);
   let [humidity, setHumididty] = useState(null);
   let [wind, setWind] = useState(null);
   let [city, setCity] = useState(null);
+  let [pinpoint, setPinpoint] = useState(null);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiKey = "dce053e8a205baf58237738242095099";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(displayForecast);
+  function weatherForecast(response) {
+    setTemperature(response.data.main.temp);
+    setDescription(response.data.weather[0].description);
+    setHumididty(response.data.main.humidity);
+    setWind(response.data.wind.speed);
+    setCity(response.data.name);
+    setReady(true);
   }
 
-  function updateLocation(event) {
-    setLocation(event.target.value);
-  }
-
-  function displayForecast(response) {
-    setForecast(response.data.main.temp);
+  function newForecast(response) {
+    setTemperature(response.data.main.temp);
     setDescription(response.data.weather[0].description);
     setHumididty(response.data.main.humidity);
     setWind(response.data.wind.speed);
     setCity(response.data.name);
   }
 
-  if (city === null) {
+  function handleSubmit() {
+    event.preventDefault();
+    let apiKey = "dce053e8a205baf58237738242095099";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${pinpoint}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(newForecast);
+  }
+
+  function updateLocation(event) {
+    setPinpoint(event.target.value);
+  }
+  if (ready) {
     return (
-      <div className="Weather">
+      <div className="Search">
         <form onSubmit={handleSubmit}>
           <input
             type="Search"
             onChange={updateLocation}
             placeholder="Type a city"
           />
+
           <input type="submit" value="Search" />
         </form>
+        <h1>{city}</h1>
+        <div className="Forecast">
+          <div className="row">
+            <div className="col-6">
+              {" "}
+              <span className="Daily">{Math.round(temperature)} </span>
+              <ConvertTemp />
+            </div>
+            <div className="col-6">
+              <ul>
+                <li className="Description">{description}</li>
+                <li>
+                  <span>Humidity: </span>
+                  <span>{humidity}%</span>
+                </li>
+                <li>
+                  <span>
+                    Wind: <span>{Math.round(wind)} mph</span>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     );
   } else {
-    return (
-      <div className="Weather">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="Search"
-            onChange={updateLocation}
-            placeholder="Type a city"
-          />
-          <input type="submit" value="Search" />
-        </form>
-        <h2>The {city} Forecast: </h2>
-        <ul>
-          <li>Temperature: {Math.round(forecast)}℉</li>
-          <li className="Description">Description: {description}</li>
-          <li>Humidity: {humidity}%</li>
-          <li>Wind: {Math.round(wind)} mph</li>
-          <li></li>
-        </ul>
-        <br />
-        <p>
-          Open source app <a href="https://github.com/jdubrey/my-app">coded</a>{" "}
-          by Jessica Dubrey
-        </p>
-      </div>
-    );
+    let apiKey = "dce053e8a205baf58237738242095099";
+    let location = "Miami";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(weatherForecast);
+
+    return "loading...";
   }
 }

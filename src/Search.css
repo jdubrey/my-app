@@ -1,3 +1,7 @@
+.Search {
+  margin: 60px auto;
+  max-width: 800px;
+}
 .Weather {
   border: 5px solid black;
   border-radius: 10px;
