@@ -29,7 +29,8 @@ export default function Search() {
     setCity(response.data.name);
   }
 
-  function handleSubmit() {
+  function handleSubmit(event) {
+    event.preventDefault();
     let apiKey = "dce053e8a205baf58237738242095099";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${pinpoint}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(newForecast);
