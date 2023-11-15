@@ -56,8 +56,7 @@ export default function Search() {
           <div className="row">
             <div className="col-6">
               {" "}
-              <span className="Daily">{Math.round(temperature)} </span>
-              <ConvertTemp />
+              <ConvertTemp fahrenheit={temperature} />
             </div>
             <div className="col-6">
               <ul>

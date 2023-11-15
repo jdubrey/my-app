@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./convert.css";
 
-export default function ConvertTemp() {
+export default function ConvertTemp(props) {
   let [unit, setUnit] = useState("fahrenheit");
-  const [temperature] = useState(null);
   function showCelsius(event) {
     event.preventDefault();
     setUnit("celsius");
@@ -15,21 +14,22 @@ export default function ConvertTemp() {
   }
 
   if (unit === "fahrenheit") {
-    let celsius = (temperature - 32) * (5 / 9);
+    let celsius = (props.fahrenheit - 32) * (5 / 9);
     return (
       <div className="ConvertTemp">
         <span className="Daily">{Math.round(celsius)} </span>
         <span className="Convert" onClick={showCelsius}>
-          °F| <a href="/"> °C </a>
+          <a href="/"> °F </a>| °C
         </span>
       </div>
     );
   } else {
+    let fahrenheit = props.fahrenheit;
     return (
       <div className="ConvertTemp">
-        <span className="Daily">{Math.round(temperature)} </span>
+        <span className="Daily">{Math.round(fahrenheit)} </span>
         <span className="Convert" onClick={showFahrenheit}>
-          <a href="/"> °F </a>| °C
+          °F | <a href="/"> °C </a>
         </span>
       </div>
     );
