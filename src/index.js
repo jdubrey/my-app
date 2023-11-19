@@ -8,8 +8,10 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Search />
-    <App />
+    <div className="container">
+      <Search />
+      <App />
+    </div>
   </React.StrictMode>
 );
 
