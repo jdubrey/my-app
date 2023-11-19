@@ -1,32 +1,41 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ConvertTemp from "./ConvertTemp";
+import ConvertDay from "./ConvertDay";
+import WeeklyForecast from "./WeeklyForecast";
 import "./Search.css";
 
 export default function Search() {
-  const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
-  let [description, setDescription] = useState(null);
-  let [humidity, setHumididty] = useState(null);
-  let [wind, setWind] = useState(null);
-  let [city, setCity] = useState(null);
-  let [pinpoint, setPinpoint] = useState(null);
+  const [weather, setWeather] = useState({ Ready: false });
+  const [pinpoint, setPinpoint] = useState(null);
 
   function weatherForecast(response) {
-    setTemperature(response.data.main.temp);
-    setDescription(response.data.weather[0].description);
-    setHumididty(response.data.main.humidity);
-    setWind(response.data.wind.speed);
-    setCity(response.data.name);
-    setReady(true);
+    console.log(response.data);
+    setWeather({
+      Ready: true,
+      Temperature: response.data.main.temp,
+      Description: response.data.weather[0].description,
+      Humidity: response.data.main.humidity,
+      Wind: response.data.wind.speed,
+      City: response.data.name,
+      Date: new Date(response.data.dt * 1000),
+      Coordinates: response.data.coord,
+      Icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    });
   }
 
   function newForecast(response) {
-    setTemperature(response.data.main.temp);
-    setDescription(response.data.weather[0].description);
-    setHumididty(response.data.main.humidity);
-    setWind(response.data.wind.speed);
-    setCity(response.data.name);
+    setWeather({
+      Ready: true,
+      Temperature: response.data.main.temp,
+      Description: response.data.weather[0].description,
+      Humidity: response.data.main.humidity,
+      Wind: response.data.wind.speed,
+      City: response.data.name,
+      Date: new Date(response.data.dt * 1000),
+      Coordinates: response.data.coord,
+      Icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    });
   }
 
   function handleSubmit(event) {
@@ -39,40 +48,58 @@ export default function Search() {
   function updateLocation(event) {
     setPinpoint(event.target.value);
   }
-  if (ready) {
+  if (weather.Ready) {
     return (
       <div className="Search">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="Search"
-            onChange={updateLocation}
-            placeholder="Type a city"
-          />
-
-          <input type="submit" value="Search" />
+        <form onSubmit={handleSubmit} id="city">
+          <div className="row">
+            <div className="col-9">
+              {" "}
+              <input
+                type="Search"
+                onChange={updateLocation}
+                placeholder="Type a city"
+              />
+            </div>
+            <div className="col-3">
+              {" "}
+              <input type="submit" value="Search" />
+            </div>
+          </div>
         </form>
-        <h1>{city}</h1>
+        <h1>{weather.City}</h1>
+        <h3>
+          <ConvertDay date={weather.Date} />
+        </h3>
         <div className="Forecast">
           <div className="row">
-            <div className="col-6">
-              {" "}
-              <ConvertTemp fahrenheit={temperature} />
+            <div className="col">
+              <ConvertTemp
+                fahrenheit={weather.Temperature}
+                icon={weather.Icon}
+              />
             </div>
-            <div className="col-6">
+            <div className="col">
               <ul>
-                <li className="Description">{description}</li>
+                <li className="Description">{weather.Description}</li>
                 <li>
                   <span>Humidity: </span>
-                  <span>{humidity}%</span>
+                  <span>{weather.Humidity}%</span>
                 </li>
                 <li>
                   <span>
-                    Wind: <span>{Math.round(wind)} mph</span>
+                    Wind: <span>{Math.round(weather.Wind)} mph</span>
                   </span>
                 </li>
               </ul>
             </div>
           </div>
+        </div>
+        <div>
+          <WeeklyForecast
+            coordinates={weather.Coordinates}
+            icon={weather.Icon}
+          />
         </div>
       </div>
     );

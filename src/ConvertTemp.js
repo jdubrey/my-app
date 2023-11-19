@@ -14,22 +14,24 @@ export default function ConvertTemp(props) {
   }
 
   if (unit === "fahrenheit") {
-    let celsius = (props.fahrenheit - 32) * (5 / 9);
+    let fahrenheit = props.fahrenheit;
     return (
       <div className="ConvertTemp">
-        <span className="Daily">{Math.round(celsius)} </span>
+        <img src={props.icon} className="DailyImg"></img>{" "}
+        <span className="Daily">{Math.round(fahrenheit)} </span>
         <span className="Convert" onClick={showCelsius}>
-          <a href="/"> °F </a>| °C
+          °F | <a href="/"> °C </a>
         </span>
       </div>
     );
   } else {
-    let fahrenheit = props.fahrenheit;
+    let celsius = (props.fahrenheit - 32) * (5 / 9);
     return (
       <div className="ConvertTemp">
-        <span className="Daily">{Math.round(fahrenheit)} </span>
+        <img src={props.icon} className="DailyImg"></img>{" "}
+        <span className="Daily">{Math.round(celsius)} </span>
         <span className="Convert" onClick={showFahrenheit}>
-          °F | <a href="/"> °C </a>
+          <a href="/"> °F </a>| °C
         </span>
       </div>
     );
