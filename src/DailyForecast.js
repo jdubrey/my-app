@@ -22,11 +22,7 @@ export default function DailyForecast(props) {
     <div className="DailyForecast">
       <ul>
         <li className="Weekday">{day()}</li>
-        <img
-          src={props.icon}
-          className="DailyImg"
-          alt="daily forecast image"
-        ></img>
+        <img src={props.icon} className="DailyImg" alt="daily forecast"></img>
         <li>
           <span className="maximumTemp">{maximumTemp()}</span> |{" "}
           <span className="minimumTemp">{minimumTemp()}</span>

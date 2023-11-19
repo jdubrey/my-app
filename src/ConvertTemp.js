@@ -17,11 +17,7 @@ export default function ConvertTemp(props) {
     let fahrenheit = props.fahrenheit;
     return (
       <div className="ConvertTemp">
-        <img
-          src={props.icon}
-          className="DailyImg"
-          alt="daily forecast image"
-        ></img>{" "}
+        <img src={props.icon} className="DailyImg" alt="daily forecast"></img>{" "}
         <span className="Daily">{Math.round(fahrenheit)} </span>
         <span className="Convert" onClick={showCelsius}>
           °F | <a href="/"> °C </a>
@@ -32,11 +28,7 @@ export default function ConvertTemp(props) {
     let celsius = (props.fahrenheit - 32) * (5 / 9);
     return (
       <div className="ConvertTemp">
-        <img
-          src={props.icon}
-          className="DailyImg"
-          alt="daily forecast image"
-        ></img>{" "}
+        <img src={props.icon} className="DailyImg" alt="daily forecast"></img>{" "}
         <span className="Daily">{Math.round(celsius)} </span>
         <span className="Convert" onClick={showFahrenheit}>
           <a href="/"> °F </a>| °C
