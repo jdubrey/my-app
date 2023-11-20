@@ -19,21 +19,15 @@ export default function WeeklyForecast(props) {
     return (
       <div className="WeeklyForecast">
         <div className="row">
-          <div className="col">
-            <DailyForecast data={forecast[1]} icon={props.icon} />
-          </div>
-          <div className="col">
-            <DailyForecast data={forecast[2]} icon={props.icon} />
-          </div>
-          <div className="col">
-            <DailyForecast data={forecast[3]} icon={props.icon} />
-          </div>
-          <div className="col">
-            <DailyForecast data={forecast[4]} icon={props.icon} />
-          </div>
-          <div className="col">
-            <DailyForecast data={forecast[5]} icon={props.icon} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 6) {
+              return (
+                <div className="col" key={index}>
+                  <DailyForecast data={dailyForecast} icon={props.icon} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
