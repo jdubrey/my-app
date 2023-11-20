@@ -23,7 +23,11 @@ export default function WeeklyForecast(props) {
           {forecast.map(function (dailyForecast, index) {
             if (index < 5) {
               return (
-                <div className="col-2" key={index}>
+                <div
+                  className="col-2"
+                  style="padding-right: 0px; padding-left: 0px;"
+                  key={index}
+                >
                   <DailyForecast data={dailyForecast} icon={props.icon} />
                 </div>
               );
