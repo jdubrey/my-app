@@ -53,7 +53,7 @@ export default function Search() {
       <div className="Search">
         <form onSubmit={handleSubmit} id="city">
           <div className="row">
-            <div className="col">
+            <div className="col-9">
               {" "}
               <input
                 type="Search"
@@ -61,7 +61,7 @@ export default function Search() {
                 placeholder="Type a city"
               />
             </div>
-            <div className="col">
+            <div className="col-3">
               {" "}
               <input type="submit" value="Search" className="button" />
             </div>
