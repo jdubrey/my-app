@@ -1,10 +1,38 @@
+Body {
+  background-color: #cac4ce;
+}
+h1 {
+  color: #f7ece1;
+}
+h3 {
+  color: #242038;
+  font-weight: bold;
+}
+h1 {
+  font-size: 56px;
+  font-weight: bold;
+}
+.button {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f7ece1;
+  border: #f7ece1;
+  color: #242038;
+}
+footer {
+  color: #242038;
+}
+.footerlink {
+  color: #8d86c9;
+}
 .Search {
   font-family: sans-serif;
-  border: #005689 3px solid;
+  border: #8d86c9 3px solid;
   border-radius: 20px;
   padding: 30px;
   margin: 60px auto;
   max-width: 750px;
+  background-color: #8d86c9;
 }
 .DailyImg {
   padding-bottom: 30px;
@@ -18,6 +46,10 @@ Form {
 }
 .Forecast {
   padding: 0px 0px 80px 0px;
+  color: #242038;
+}
+.todaydescription {
+  font-size: 20px;
 }
 ul {
   list-style-type: none;
@@ -28,6 +60,7 @@ ul {
 .Daily {
   font-size: 60px;
   font-weight: 600;
+  color: #242038;
 }
 .App {
   font-family: sans-serif;

@@ -53,7 +53,7 @@ export default function Search() {
       <div className="Search">
         <form onSubmit={handleSubmit} id="city">
           <div className="row">
-            <div className="col-9">
+            <div className="col">
               {" "}
               <input
                 type="Search"
@@ -61,9 +61,9 @@ export default function Search() {
                 placeholder="Type a city"
               />
             </div>
-            <div className="col-3">
+            <div className="col">
               {" "}
-              <input type="submit" value="Search" />
+              <input type="submit" value="Search" className="button" />
             </div>
           </div>
         </form>
@@ -79,7 +79,7 @@ export default function Search() {
                 icon={weather.Icon}
               />
             </div>
-            <div className="col">
+            <div className="col todaydescription">
               <ul>
                 <li className="Description">{weather.Description}</li>
                 <li>
