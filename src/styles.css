@@ -4,7 +4,14 @@
   border-radius: 20px;
   padding: 30px;
   margin: 60px auto;
-  max-width: 660px;
+  max-width: 750px;
+}
+.DailyImg {
+  padding-bottom: 30px;
+  height: 110px;
+}
+.weekdayImg {
+  height: 100px;
 }
 Form {
   padding: 0px 0px 10px 0px;
@@ -21,4 +28,15 @@ ul {
 .Daily {
   font-size: 60px;
   font-weight: 600;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+A .Convert {
+  position: relative;
+  top: -32px;
+}
+.WeeklyForecast {
+  text-align: center;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./convert.css";
+import "./styles.css";
 
 export default function ConvertTemp(props) {
   let [unit, setUnit] = useState("fahrenheit");

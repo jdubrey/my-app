@@ -3,7 +3,7 @@ import axios from "axios";
 import ConvertTemp from "./ConvertTemp";
 import ConvertDay from "./ConvertDay";
 import WeeklyForecast from "./WeeklyForecast";
-import "./Search.css";
+import "./styles.css";
 
 export default function Search() {
   const [weather, setWeather] = useState({ Ready: false });
