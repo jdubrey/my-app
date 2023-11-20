@@ -59,11 +59,18 @@ export default function Search() {
                 type="Search"
                 onChange={updateLocation}
                 placeholder="Type a city"
+                style={{ width: "100%" }}
+                id="start"
               />
             </div>
             <div className="col-3">
               {" "}
-              <input type="submit" value="Search" className="button" />
+              <input
+                type="submit"
+                value="Search"
+                className="button"
+                style={{ width: "100%" }}
+              />
             </div>
           </div>
         </form>

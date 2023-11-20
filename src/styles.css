@@ -1,6 +1,9 @@
 Body {
   background-color: #fbf5f3;
 }
+.container {
+  width: 100%;
+}
 h1 {
   color: #f7ece1;
 }
@@ -12,12 +15,22 @@ h1 {
   font-size: 56px;
   font-weight: bold;
 }
+#start {
+  background-color: #f7ece1;
+  border-color: #f7ece1;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 5px;
+  color: #242038;
+}
+
 .button {
   border-radius: 10px;
   padding: 10px;
   background-color: #f7ece1;
   border: #f7ece1;
   color: #242038;
+  font-size: 16px;
 }
 footer {
   color: #242038;
@@ -66,9 +79,13 @@ ul {
   font-family: sans-serif;
   text-align: center;
 }
-A .Convert {
+.Convert {
   position: relative;
   top: -32px;
+}
+.Convert A {
+  text-decoration: none;
+  color: #fbf5f3;
 }
 .WeeklyForecast {
   text-align: center;
