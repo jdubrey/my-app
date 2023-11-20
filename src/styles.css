@@ -90,6 +90,8 @@ ul {
 .WeeklyForecast {
   text-align: center;
   width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .DailyForecast {
   padding-left: 5px;
